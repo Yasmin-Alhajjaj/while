@@ -357,6 +357,14 @@ fibon(n): 1 1 2 3 5 8 13 21
           | | | | | |  |  |
 n:        0 1 2 3 4 5  6  7
 */
+// function fibon(n) {
+//     var fib= n;
+//     while (n>1) {
+
+//    fib=fib+(fib-1)     
+//     }  
+// }
+
 
 
 /*
@@ -372,7 +380,18 @@ mirror("car") => "rac"
 mirror("maDrasa") => "asarDam"
 */
 
+function mirror(n)
+{ 
+    var name="" ;
+    while (n.length>=1) {
 
+    name=name + n.slice(-1);
+
+    n=n.slice(0,n.length-1)
+    }
+    return name;
+}
+console.log(mirror("Abc"))
 
 /*
 3
@@ -388,6 +407,25 @@ mirrorCaseAlso("THOR") => "roht"
 mirrorCaseAlso("BaBa") => "AbAb"
 */
 
+function mirrorCaseAlso(n){
+       var y ="";
+        var name="" ;
+        while (n.length>=1) {
+
+        if (n.slice(-1).toUpperCase() == n.slice(-1)) 
+        { y=  n.slice(-1).toLowerCase()}
+
+        else { y= n.slice(-1).toUpperCase()}
+        
+      name= name+y;
+    
+        n=n.slice(0,n.length-1)
+        y= n.slice(-1);
+        }
+        return name;
+
+}
+console.log(mirrorCaseAlso("AbC"))   
 
 
 /*
@@ -405,6 +443,25 @@ repeatChar2("school","a") => 0
 repeatChar2("School","S") => 1
 try more case by yourself
 */
+
+function repeatChar2(name, char) {
+    
+    var y = 0;
+
+    while (name.length > 0) {
+        
+        if (char === name.slice(0, 1)){
+            y = y + 1;
+        }
+    
+
+        name= name.slice(1, name.length )
+
+    }
+
+    return y
+}
+console.log(repeatChar2("scooOl","o") )
 
 
 /*
@@ -428,3 +485,20 @@ hi 5 Now Pleas Say Hello To 1, 2, 3 and 4
 hi 6 Now Pleas Say Hello To 1, 2, 3, 4 and 5
 hi 7 Now Pleas Say Hello To 1, 2, 3, 4, 5 and 6
 */
+
+function HiSayHelloTo(x)
+{
+    var hi="";
+    var y = 2;
+
+
+    while (x>0) {
+ 
+      if (x==1){ hi= "hi 1"   }
+
+    hi= "hi"+ y + "Now Pleas Say Hello To" + 1 ;  
+    x=x-1;  
+    y=y+1;  
+    }
+    return hi;
+}
