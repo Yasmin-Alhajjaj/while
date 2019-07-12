@@ -476,7 +476,7 @@ Ex: welcomeSayHello(3);
 hi 1
 hi 2 Now Pleas Say Hello To 1
 hi 3 Now Pleas Say Hello To 1 and 2
-Ex: welcomeSayHello(7); => 2
+Ex: welcomeSayHello(7); => 
 hi 1
 hi 2 Now Pleas Say Hello To 1
 hi 3 Now Pleas Say Hello To 1 and 2
@@ -486,19 +486,51 @@ hi 6 Now Pleas Say Hello To 1, 2, 3, 4 and 5
 hi 7 Now Pleas Say Hello To 1, 2, 3, 4, 5 and 6
 */
 
+
+    var x=7;
+    console.log("hi 1" )   
+   var y=2
+   var hi="hi "+y+" Now Pleas Say Hello To 1";
+
+    while (x>1) 
+    {
+   console.log(hi) 
+
+    hi=hi+", " + y;  
+    y=y+1; 
+   x=x-1;
+    }
+
+    console.log("////////////////////////////////////////////" )   
+
+    
 function HiSayHelloTo(x)
 {
-    var hi="";
-    var y = 2;
+ console.log("hi 1" ) 
 
+ var y=2;
+ var z=0;
+ var hi="";
 
-    while (x>0) {
- 
-      if (x==1){ hi= "hi 1"   }
+  while (x>1) 
+  {
+     hi="hi "+y+" Now Pleas Say Hello To 1";
+     var z=2;
+       while (z<y)
+         {
 
-    hi= "hi"+ y + "Now Pleas Say Hello To" + 1 ;  
-    x=x-1;  
-    y=y+1;  
-    }
-    return hi;
+          if(z==y-1){   hi=hi+ " and "+(z) ;}   
+
+          else{ hi=hi+ ", "+(z) ;  
+          } 
+   
+         z=z+1
+         }
+     console.log(hi)  
+     y=y+1; 
+     x=x-1;
+  }
+ return "";
 }
+console.log(HiSayHelloTo(7));
+
