@@ -353,19 +353,42 @@ Ex: fibon(2); => 2
 Ex: fibon(1); => 1
 Ex: fibon(0); => 1
 fib(n)=fin(n-1)+fib(n-2)
-fibon(n): 1 1 2 3 5 8 13 21
-          | | | | | |  |  |
-n:        0 1 2 3 4 5  6  7
+fibon(n):0.+
+60
+   1 1  2 3 5 8 13 21
+    | | | | | |  |  |
+n:  0 1 2 3 4 5  6  7
 */
-// function fibon(n) {
-//     var fib= n;
-//     while (n>1) {
+ function fibon(num) 
+ {
+ var x=0;
+ var a=1;
+ var b=1;
+ var y=0;
+     if (num==1||num==0)  
+     { return 1; }
+     else 
+     {
+       while (x<num-1) 
+         { 
+             y=a+b;
+             a=b;
+             b=y;
+             x=x+1;
+         }
+     return y;
+     }
 
-//    fib=fib+(fib-1)     
-//     }  
-// }
 
+  
+ }
+ console.log(fibon(0))
+ console.log(fibon(1))
+ console.log(fibon(4))
+ console.log(fibon(5))
+ console.log(fibon(7))
 
+console.log("////////////////////////////////////////////" )   
 
 /*
 2
@@ -506,31 +529,30 @@ hi 7 Now Pleas Say Hello To 1, 2, 3, 4, 5 and 6
     
 function HiSayHelloTo(x)
 {
- console.log("hi 1" ) 
+  //console.log("hi 1" ) 
 
- var y=2;
- var z=0;
- var hi="";
-
-  while (x>1) 
-  {
-     hi="hi "+y+" Now Pleas Say Hello To 1";
-     var z=2;
-       while (z<y)
-         {
-
-          if(z==y-1){   hi=hi+ " and "+(z) ;}   
-
-          else{ hi=hi+ ", "+(z) ;  
-          } 
-   
-         z=z+1
-         }
-     console.log(hi)  
+   var y=2;
+   var z=0;
+   var hi="hi 1"+"\n";
+   while (x>1) 
+   {
+     
+      hi=hi+"hi "+y+" Now Pleas Say Hello To 1";
+      var z=2;
+      while (z<y)
+      {
+          if(z==y-1)
+          {   hi=hi+ " and "+(z) ;}   
+          else
+          {   hi=hi+ ", "+(z) ;  } 
+          z=z+1
+      }
+      hi=hi+"\n";
+     //console.log(hi)  
      y=y+1; 
      x=x-1;
-  }
- return "";
+   }
+   return hi;
 }
-console.log(HiSayHelloTo(7));
+console.log(HiSayHelloTo(10));
 
